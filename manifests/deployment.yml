@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "kubernetes-d1b4"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "kubernetes-d1b4"
+  template:
+    metadata:
+      labels:
+        app: "kubernetes-d1b4"
+    spec:
+      containers:
+        - name: "kubernetes-d1b4"
+          image: "acrstudentspub1.azurecr.io/kubernetes"
+          ports:
+          - containerPort: 80
